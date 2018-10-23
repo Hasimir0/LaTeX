@@ -1,0 +1,61 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{a4wide}
+\usepackage{graphicx}
+\usepackage[siunitx]{circuitikz}
+
+\title{\vspace{-4.0cm} LSL03 - Task 01}
+\author{by Alessandro Piroddi}
+\date{2018.10.23}
+
+\begin{document}
+\maketitle
+
+\section*{Given the following network}
+\begin{figure}[h!]
+\begin{center}
+\begin{circuitikz}
+\draw
+(0,0)   to[V,v<=$5V$]               (0,5) % voltage source
+        to[R, l_=$500\si{\ohm}$]    (3,5) % 1st resistor
+        --                          (3,5)
+        to[I,i=$6mA$, *-]           (3,3) % current source
+        to[R, l_=$400\si{\ohm}$, -*](3,0) % 2nd resistor
+        --                          (0,0)
+(3,5)   --                          (5,5)
+        to[R, l=$500\si{\ohm}$, *-*](5,0) % 3rd resistor
+        --                          (3,0)
+(5,5)   to[short, -o]               (7,5) % open node "a"
+            node[above]{a}
+            
+(5,0)   to[short, -o]               (7,0) % open node "b"
+            node[below]{b}
+;
+\end{circuitikz}
+\end{center}
+\end{figure}
+
+\textbf{a)}\\
+Find the open-circuit voltage U{\tiny th} across terminals \textbf{a} and \textbf{b} of the Thevenin equivalent circuit.\\
+
+\textbf{b)}\\
+Find the short-circuit current i{\tiny sc} between terminals \textbf{a} and \textbf{b} of the circuit.\\
+
+\textbf{c)}\\
+Find the Thevenin resistance R{\tiny th}, of the Thevenin equivalent circuit, using your results
+from sub-questions a) and b) above.\\
+
+\textbf{d)}\\
+Find the Thevenin resistance R{\tiny th} of the Thevenin equivalent circuit by finding the
+equivalent resistance R{\tiny eq} with respect to terminals \textbf{a} and \textbf{b} when all independent sources are deactivated.\\
+
+\textbf{e)}\\
+(i) Are your results from sub-exercises c) and d) the same? (Yes/No)\\
+(ii) Should the be the same? (Yes/No)\\
+
+\textbf{f)}\\
+Draw your Thevenin equivalent circuit below
+
+\end{document}
